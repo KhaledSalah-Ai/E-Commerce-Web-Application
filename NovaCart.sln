@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34511.84
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NovaCart.Domain", "NovaCart.Domain\NovaCart.Domain.csproj", "{8E6CDBB9-97F8-4484-8ED3-3A68CD4936F9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NovaCart.Application", "NovaCart.Application\NovaCart.Application.csproj", "{2BA260E0-6F9E-4559-A19E-CB178CC7E4A9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NovaCart.Infrastructure", "NovaCart.Infrastructure\NovaCart.Infrastructure.csproj", "{80540EE1-3870-443F-A27C-B9547E3B1722}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NovaCart.API", "NovaCart.API\NovaCart.API.csproj", "{6E29D737-1AC5-41AD-8951-E1C5B11C5257}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8E6CDBB9-97F8-4484-8ED3-3A68CD4936F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E6CDBB9-97F8-4484-8ED3-3A68CD4936F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E6CDBB9-97F8-4484-8ED3-3A68CD4936F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E6CDBB9-97F8-4484-8ED3-3A68CD4936F9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2BA260E0-6F9E-4559-A19E-CB178CC7E4A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2BA260E0-6F9E-4559-A19E-CB178CC7E4A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2BA260E0-6F9E-4559-A19E-CB178CC7E4A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2BA260E0-6F9E-4559-A19E-CB178CC7E4A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{80540EE1-3870-443F-A27C-B9547E3B1722}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80540EE1-3870-443F-A27C-B9547E3B1722}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80540EE1-3870-443F-A27C-B9547E3B1722}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80540EE1-3870-443F-A27C-B9547E3B1722}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E29D737-1AC5-41AD-8951-E1C5B11C5257}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E29D737-1AC5-41AD-8951-E1C5B11C5257}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E29D737-1AC5-41AD-8951-E1C5B11C5257}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E29D737-1AC5-41AD-8951-E1C5B11C5257}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {52D39CCB-F41F-45B4-A784-24562C39E8F9}
+	EndGlobalSection
+EndGlobal
