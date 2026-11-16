@@ -1,0 +1,38 @@
+<div class="auth-container">
+  <div class="auth-card">
+    <h2>إنشاء حساب جديد - NovaCart 🛍️</h2>
+    
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+      
+      <div class="form-group">
+        <label>الاسم الأول:</label>
+        <input type="text" formControlName="firstName" placeholder="أدخل اسمك الأول" />
+      </div>
+
+      <div class="form-group">
+        <label>اسم العائلة:</label>
+        <input type="text" formControlName="lastName" placeholder="أدخل اسم العائلة" />
+      </div>
+
+      <div class="form-group">
+        <label>البريد الإلكتروني:</label>
+        <input type="email" formControlName="email" placeholder="name@example.com" />
+      </div>
+
+      <div class="form-group">
+        <label>كلمة المرور:</label>
+        <input type="password" formControlName="password" placeholder="••••••••" />
+      </div>
+
+      <div *ngIf="errorMessage" class="error-msg">
+        {{ errorMessage }}
+      </div>
+
+      <button type="submit" [disabled]="registerForm.invalid" class="submit-btn">تسجيل حساب</button>
+    </form>
+
+    <p class="switch-auth">
+      لديك حساب بالفعل؟ <a routerLink="/login">سجل دخولك من هنا</a>
+    </p>
+  </div>
+</div>

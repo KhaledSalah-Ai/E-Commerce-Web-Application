@@ -1,0 +1,48 @@
+<div class="cart-page" dir="rtl" lang="ar">
+  <div class="cart-header">
+    <h1>🛒 سلة المشتريات</h1>
+    <a routerLink="/home" class="back-btn">← متابعة التسوق</a>
+  </div>
+
+  @if (items.length > 0) {
+    <div class="cart-layout">
+      <div class="cart-items">
+        @for (item of items; track item.product.id) {
+          <div class="cart-item">
+            <div class="item-emoji">{{ item.product.emoji }}</div>
+            <div class="item-info">
+              <h3>{{ item.product.name }}</h3>
+              <p class="item-price">{{ item.product.price | currency }}</p>
+            </div>
+            <div class="qty-controls">
+              <button type="button" (click)="decrease(item.product.id)">-</button>
+              <span>{{ item.quantity }}</span>
+              <button type="button" (click)="increase(item.product.id)">+</button>
+            </div>
+            <div class="item-subtotal">
+              {{ (item.product.price * item.quantity) | currency }}
+            </div>
+            <button type="button" class="remove-btn" (click)="remove(item.product.id)" aria-label="حذف">🗑️</button>
+          </div>
+        }
+      </div>
+
+      <div class="cart-summary">
+        <h2>ملخص الطلب</h2>
+        <div class="summary-row">
+          <span>الإجمالي الكلي:</span>
+          <strong>{{ total | currency }}</strong>
+        </div>
+        <button type="button" class="checkout-btn" (click)="checkout()">إتمام الشراء</button>
+        <button type="button" class="clear-btn" (click)="clear()">إفراغ السلة</button>
+      </div>
+    </div>
+  } @else {
+    <div class="empty-cart">
+      <span class="empty-emoji">🛍️</span>
+      <h2>سلة المشتريات فارغة حالياً</h2>
+      <p>أضف بعض المنتجات الرائعة من المتجر لتظهر هنا.</p>
+      <a routerLink="/home" class="shop-now-btn">تصفح المنتجات</a>
+    </div>
+  }
+</div>

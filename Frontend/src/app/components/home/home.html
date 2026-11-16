@@ -1,0 +1,102 @@
+<div class="home-container" dir="rtl" lang="ar">
+
+  <!-- الشريط العُلوي الخدمي (Top Bar) -->
+  <div class="top-bar">
+    <div class="social-links">
+      <span class="social-label">تابعنا:</span>
+      <a href="#" class="social-item">📘 فيسبوك</a>
+      <a href="#" class="social-item">📸 إنستجرام</a>
+      <a href="#" class="social-item">🐦 تويتر</a>
+    </div>
+    <div class="utility-links">
+      <a routerLink="/about">معلومات عنا</a>
+      <span class="divider">|</span>
+      <a routerLink="/contact">اتصل بنا</a>
+      <span class="divider">|</span>
+      <a routerLink="/privacy">سياسة الخصوصية</a>
+    </div>
+  </div>
+
+  <!-- شريط التنقل الرئيسي (Main Navbar) -->
+  <nav class="navbar">
+    <div class="logo" dir="ltr">NovaCart 🛍️</div>
+
+    <div class="search-box" [class.has-value]="searchTerm.length > 0">
+      <input
+        type="text"
+        [(ngModel)]="searchTerm"
+        placeholder="ابحث عن منتجك المفضل..."
+        aria-label="بحث" />
+      @if (searchTerm.length > 0) {
+        <button type="button" class="clear-search-btn" (click)="clearSearch()" aria-label="مسح البحث">✕</button>
+      }
+    </div>
+
+    <div class="user-actions">
+      <span class="welcome-text">مرحباً بك</span>
+      <button class="cart-btn" type="button" routerLink="/cart">
+        🛒 السلة
+        @if (cartCount > 0) {
+          <span class="cart-count">{{ cartCount }}</span>
+        }
+      </button>
+      <button class="logout-btn" type="button" (click)="logout()">تسجيل خروج</button>
+    </div>
+  </nav>
+
+  <!-- بانر الترحيب (Hero Section) -->
+  <header class="hero-banner">
+    <div class="hero-content">
+      <h1>اكتشف أحدث العروض والمنتجات</h1>
+      <p>تسوق أفضل الإلكترونيات والمنتجات بجودة عالية وأسعار منافسة مع NovaCart</p>
+      <button class="cta-btn" type="button">تصفح المنتجات</button>
+    </div>
+    <div class="hero-visual" aria-hidden="true">
+      <span class="hero-emoji e1">📱</span>
+      <span class="hero-emoji e2">💻</span>
+      <span class="hero-emoji e3">🎧</span>
+    </div>
+  </header>
+
+  <!-- قسم عرض المنتجات (Product Grid) -->
+  <main class="products-section">
+    <div class="section-header">
+      <h2>
+        @if (searchTerm.trim()) {
+          نتائج البحث ({{ filteredProducts.length }})
+        } @else {
+          المنتجات المميزة
+        }
+      </h2>
+    </div>
+
+    <div class="products-grid">
+      @for (p of filteredProducts; track p.id) {
+        <div class="product-card">
+          <div class="product-img">
+            @if (p.badge) {
+              <span class="badge">{{ p.badge }}</span>
+            }
+            @if (p.img) {
+              <img [src]="p.img" [alt]="p.name" />
+            } @else {
+              <span class="product-emoji">{{ p.emoji }}</span>
+            }
+          </div>
+          <h3>{{ p.name }}</h3>
+          <div class="rating" [attr.aria-label]="'التقييم ' + p.rating + ' من 5'">
+            {{ stars(p.rating) }} <small>({{ p.reviews }})</small>
+          </div>
+          <p class="product-price">{{ p.price | currency }}</p>
+          <button class="add-btn" type="button" (click)="addToCart(p)">أضف للسلة</button>
+        </div>
+      } @empty {
+        <div class="empty-search">
+          <span class="empty-icon">🔍</span>
+          <p>لا توجد منتجات تطابق بحثك "<strong>{{ searchTerm }}</strong>"</p>
+          <button type="button" class="reset-search-btn" (click)="clearSearch()">عرض كل المنتجات</button>
+        </div>
+      }
+    </div>
+  </main>
+</div>

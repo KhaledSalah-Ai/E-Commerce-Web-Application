@@ -1,0 +1,103 @@
+.page-container {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f8fafc;
+  min-height: 100vh;
+  padding: 40px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content-card {
+  background: white;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  max-width: 700px;
+  width: 100%;
+  color: #1e293b;
+}
+
+.content-card h1 {
+  color: #2563eb;
+  margin-bottom: 15px;
+  font-size: 28px;
+}
+
+.content-card p {
+  color: #64748b;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.features-list {
+  display: grid;
+  gap: 15px;
+  margin: 25px 0;
+}
+
+.feature-item {
+  background: #f1f5f9;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.feature-item h3 {
+  font-size: 16px;
+  color: #0f172a;
+  margin-bottom: 5px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+  text-align: right;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #334155;
+}
+
+.form-group input, .form-group textarea {
+  width: 100%;
+  padding: 10px 15px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  outline: none;
+  font-family: inherit;
+}
+
+.form-group input:focus, .form-group textarea:focus {
+  border-color: #2563eb;
+}
+
+.submit-btn, .back-btn {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 10px;
+  transition: background 0.2s;
+}
+
+.submit-btn:hover, .back-btn:hover {
+  background: #1d4ed8;
+}
+
+.back-btn-secondary {
+  background: #f1f5f9;
+  color: #334155;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 10px;
+}
